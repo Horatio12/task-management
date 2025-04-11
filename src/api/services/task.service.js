@@ -15,7 +15,7 @@ const getTaskById = async (id) => {
 
 const createTask= async(taskData)=>{
     const tasksExist = await getTaskByEmail(taskData.email);
-    if (taskExist) {
+    if (tasksExist) {
         throw new Error ("Email already exists");
     }
     const task = await TaskModel.create(taskData);
